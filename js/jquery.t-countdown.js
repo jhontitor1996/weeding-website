@@ -82,8 +82,9 @@
 
     $.fn.setDiffSecs = function (targetTime, backuptime) {
         var diffSecs = null;
+      
         $.ajax({
-            url: tminusnow,
+            url: 'http://demo.solwininfotech.com/wordpress/twogether/wp-admin/admin-ajax.php',
             type: "post",
             dataType: "json",
             success: $.proxy(function (data) {
@@ -93,7 +94,7 @@
                 $(this).doCountDown($(this).attr('id'), diffSecs, 500);
             }, this),
             error: $.proxy(function (request, status, error) {
-                nowTime = new Date(backuptime);
+                nowTime = new Date();
                 diffSecs = Math.floor((targetTime.valueOf() - nowTime.valueOf()) / 1000);
                 $(this).doCountDown($(this).attr('id'), diffSecs, 500);
             }, this)
