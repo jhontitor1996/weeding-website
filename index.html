@@ -62,6 +62,7 @@
         <script type='text/javascript' src='js/script.js'></script>
         <script type='text/javascript' src='js/avartanslider.min.js'></script>
         <style>
+            ::-webkit-scrollbar { width: 0 !important }
             body{
             font-family: arial;
             font-size: 14px;
@@ -175,7 +176,7 @@
                         <div class="back-img">
                             <div style="display: none;" class="avartanslider-slider avartanslider-slider-full-width avartanslider-slider-home_slider" id="avartanslider-1">
                                 <ul>
-                                    <li style=" background-color: transparent; background-image: url('images/banner.jpg');; background-position: center center; background-repeat: no-repeat; background-size: cover;" data-in="slideRight" data-ease-in="300" data-out="slideLeft" data-ease-out="300" data-time="3000"></li>
+                                    <li style=" background-color: transparent; background-image: url('images/banner.jpg');; background-position: center 2%; background-repeat: no-repeat; background-size: cover;" data-in="slideRight" data-ease-in="300" data-out="slideLeft" data-ease-out="300" data-time="3000"></li>
                                 </ul>
                             </div>
                             <script type="text/javascript">
@@ -220,27 +221,27 @@
                         <div class="nice-couple col-md-12 col-sm-12 col-xs-12 padding_0">
                             <div class="container">
                                 <div class="banner_content">
-                                    <div class="b_name left">发发
+                                    <div class="b_name left">芳芳
                                     </div>
                                     <div class="b_name middle">
                                         <img src="images/bride_groom_sep.png" alt="Amor" />
                                     </div>
-                                    <div class="b_name right"> 芳芳
+                                    <div class="b_name right">发发
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-12 col-sm-12 col-xs-12 celebrate padding_0">
-                                <em><h3>2022年8月5日，我们已经一起走过</h3></em>
+                            <div class="col-md-12 col-sm-12 col-xs-12 celebrate padding_0" style="margin-top:80px">
+                                <em><h3>2015年7月23日至今，我们已经一起走过</h3></em>
                             </div>
                             <div class="col-sm-12 col-12 timer-counter">
                               <div id="6251-countdown" class="tminus_countdown"><div class="container cloud-city-countdown omit weeks"><div id="6251-dashboard" class="cloud-city-dashboard"><div class="cloud-city-dash cloud-city-days_dash"><div class="cloud-city-dash_title">Days</div><div class="cloud-city-digit"><div class="top" style="display: none;"></div><div class="bottom" style="display: block;"></div></div><div class="cloud-city-digit"><div class="top" style="display: none;"></div><div class="bottom" style="display: block;"></div></div><div class="cloud-city-digit"><div class="top" style="display: none;"></div><div class="bottom" style="display: block;"></div></div></div><div class="cloud-city-dash cloud-city-hours_dash"><div class="cloud-city-dash_title">Hours</div><div class="cloud-city-digit"><div class="top" style="display: none;"></div><div class="bottom" style="display: block;"></div></div><div class="cloud-city-digit"><div class="top" style="display: none;"></div><div class="bottom" style="display: block;"></div></div></div><div class="cloud-city-dash cloud-city-minutes_dash"><div class="cloud-city-dash_title">Minutes</div><div class="cloud-city-digit"><div class="top" style="display: none;"></div><div class="bottom" style="display: block;"></div></div><div class="cloud-city-digit"><div class="top" style="display: none;"></div><div class="bottom" style="display: block;"></div></div></div><div class="cloud-city-dash cloud-city-seconds_dash"><div class="cloud-city-dash_title">Seconds</div><div class="cloud-city-digit"><div class="top" style="display: none;"></div><div class="bottom" style="display: block;"></div></div><div class="cloud-city-digit"><div class="top" style="overflow: hidden; height: 49.0106px; padding-top: 0px; margin-top: 0px; padding-bottom: 0px; margin-bottom: 0px;"></div><div class="bottom" style="display: block; overflow: hidden; height: 3.48939px;">1</div></div></div></div></div></div><script language="javascript" type="text/javascript">
                       jQuery(document).ready(function($) {
                           $('#6251-dashboard').countDown({
                               targetDate: {
-                                  'day': 	20,
+                                  'day': 	23,
                                   'month': 7,
-                                  'year': 2022,
-                                  'hour': 12,
+                                  'year': 2015,
+                                  'hour': 00,
                                   'min': 	00,
                                   'sec': 	00
                               },
@@ -294,7 +295,7 @@
                                     <h3 class="welcome text-center">
                                         <b>新娘</b>
                                     </h3>
-                                    <div class="text-capitalize text-center">林燕芳</div>
+                                    <div class="text-capitalize text-center">姚燕芳</div>
                                 </div>
                                 <div class="girl-content">
                                 </div>
@@ -778,7 +779,7 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-xs-12 col-sm-12 col-md-12">
-                                <p>Sonia &amp; Roque</p>
+                                <p>💗祝 发发 &amp; 芳芳 百年好合，早生贵子💗</p>
                             </div>
                         </div>
                     </div>
@@ -793,5 +794,38 @@
         <script type='text/javascript' src='js/jquery/ui/sortable.min.js'></script>
         <script type='text/javascript' src='js/jquery/ui/effect.min.js'></script>
         <script type='text/javascript' src='js/wp-embed.min.js'></script>
+        <!-- <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+        <script type='text/javascript'>
+          // var currentpos=window.screen.height,timer;
+          var currentpos=0,timer;
+          function initialize()
+          {
+            // timer=setInterval("scrollwindow()",6000);
+            timer=setInterval("scrollwindow()",20);
+          }
+          function sc()
+          {
+            clearInterval(timer);
+            console.log("stop");
+          }
+          function scrollwindow()
+          {  
+            //  currentpos+=window.screen.height;
+             currentpos++;
+              console.log("currentpos"+currentpos);  
+             window.scroll(0,currentpos);   
+             if(currentpos >= document.body.scrollHeight)
+            {
+               sc();    
+            }  
+          }
+          document.onmousedown=sc; //停止
+          document.ondblclick=initialize; //开始
+          // setTimeout(()=>{
+          //   initialize()
+          // },1500)
+          
+
+        </script>
     </body>
 </html>
