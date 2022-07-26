@@ -1635,6 +1635,9 @@ ul.links li {
 }
 .top-back .images1 .nice-couple {
     display: none;
+    position: relative;
+    width: 100%;
+    height: 100%;
 }
 .images1 {
     position: absolute;
@@ -2679,7 +2682,9 @@ div.wpcf7-validation-errors.wpcf7-response-output {
         margin-top: 5px;
     }
     .timer-counter {
-        position: relative;
+        position: absolute;
+        bottom: 20px;
+        /* position: relative; */
         top: -5px;
     }
     .groom-img.padd-left {
@@ -3172,4 +3177,31 @@ div.wpcf7-validation-errors.wpcf7-response-output {
     .images1 {
         top: -5%;
     }
+}
+
+#playMp3 {
+    display: none;
+}
+
+.init-tooltip {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 350px;
+  background-color: black;
+  color: #fff;
+  text-align: left;
+  border-radius: 6px;
+  padding: 5px;
+  /* opacity: 0.75; */
+  opacity: 0;
+
+  z-index: 999;
+  transition: all 1s;
+}
+
+.tooltip-text {
+  font-size: 20px;
+  color: #fff;
 }

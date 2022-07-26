@@ -12,7 +12,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>发发 &amp; 芳芳</title>
+        <title>恩发 &amp; 燕芳</title>
         <link rel="profile" href="http://gmpg.org/xfn/11">
         <!--[if lt IE 9]>
         <![endif]-->
@@ -44,8 +44,6 @@
         <link rel='stylesheet' id='fancyboxCss-css'  href='css/jquery.fancybox.css' type='text/css' media='all' />
         <link rel='stylesheet' id='custom_fonts1-css'  href='http://fonts.googleapis.com/css?family=Pacifico' type='text/css' media='all' />
         <link rel='stylesheet' id='custom_fonts2-css'  href='http://fonts.googleapis.com/css?family=Aclonica' type='text/css' media='all' />
-
-
         <script type='text/javascript' src='js/jquery/jquery.js'></script>
         <script type='text/javascript' src='js/jquery/jquery-migrate.min.js'></script>
         <script type='text/javascript' src='js/jquery.blockUI.js'></script>
@@ -54,9 +52,6 @@
         <script type='text/javascript' src='js/jquery.html5-placeholder-shim.js'></script>
         <script type='text/javascript' src='js/jquery.flexslider-min.js'></script>
         <script type="text/javascript" src="https://api.map.baidu.com/api?v=3.0&ak=RuhbqqphyplvjDwr1vfnhTuv7a0LEw14"></script>
-        <!-- <script type="text/javascript" src="http://api.map.baidu.com/api?v=1.2"></script>
-<script type="text/javascript" src="g2b.o.js"></script>     -->
-        <!-- <script type='text/javascript' src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCqRToQhqrVxRfxxv-olfHGrOAnzG6QA1c'></script> -->
         <script type='text/javascript' src='js/jquery.t-countdown.js'></script>
         <script type='text/javascript' src='js/jquery.fancybox.pack.js'></script>
         <script type='text/javascript' src='js/script.js'></script>
@@ -152,6 +147,11 @@
     </head>
     <body class="home page-template page-template-page-templates page-template-home-page page-template-page-templateshome-page-php page page-id-82 masthead-fixed full-width grid">
         <div id="page" class="hfeed site">
+            <audio autoplay="autoplay" loop="loop" preload="auto" controls id="playMp3"></audio>
+            <div class="init-tooltip" id="tooltip">
+              <b class="tooltip-text">温馨提示：</b>
+              <span class="tooltip-text">PC端可F11开启全屏，双击屏幕开启自动循环播放，单击屏幕暂停</span>
+            </div>
             <header id="masthead" class="site-header text-center" role="banner">
                 <div class="container">
                     <div id="navigation" class="navbar-collapse collapse">
@@ -159,11 +159,11 @@
                             <ul id="menu-header-menu" class="nav nav-menu">
                                 <li id="menu-item-161" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-82 current_page_item"><a href="#home">今天</a></li>
                                 <li id="menu-item-130" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="#we">我们</a></li>
-                                <li id="menu-item-27" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="#our-story-love">从相知相爱</a></li>
-                                <li id="menu-item-26" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="#gallery">到相濡以沫</a></li>
-                                <li id="menu-item-25" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="#event">到步入婚姻殿堂</a></li>
-                                <li id="menu-item-23" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="#place">地点</a></li>
-                                <li id="menu-item-23" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="#presents">礼物</a></li>
+                                <li id="menu-item-27" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="#our-story-love">一路走来</a></li>
+                                <li id="menu-item-26" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="#gallery">终于结婚啦！</a></li>
+                                <!-- <li id="menu-item-25" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="#event">到步入婚姻殿堂</a></li> -->
+                                <li id="menu-item-23" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="#place">⛪地点</a></li>
+                                <li id="menu-item-23" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="#presents">🎉祝福</a></li>
                             </ul>
                         </div>
                     </div>
@@ -181,11 +181,14 @@
                             </div>
                             <script type="text/javascript">
                                 (function($) {
-                                $(document).ready(function() {
+                                $(document).ready(
+                                  function() {
+                                  // alert($(window).height())
+                                $('#timer-counter').css('top',$(window).height()*0.1);
                                 $("#avartanslider-1").avartanSlider({
                                 layout: 'full-width',
                                 startWidth: 1170,
-                                startHeight: 500,
+                                startHeight: $(window).height()*0.75,
                                 sliderBgColor: 'transparent',
                                 automaticSlide: 1,
                                 enableSwipe: 1,
@@ -211,7 +214,8 @@
                                  }
                                 },
                                 });
-                                });
+                                }
+                                );
                                 })(jQuery);
                             </script>
                         </div>
@@ -221,20 +225,40 @@
                         <div class="nice-couple col-md-12 col-sm-12 col-xs-12 padding_0">
                             <div class="container">
                                 <div class="banner_content">
-                                    <div class="b_name left">芳芳
+                                    <div class="b_name left">燕芳
                                     </div>
                                     <div class="b_name middle">
                                         <img src="images/bride_groom_sep.png" alt="Amor" />
                                     </div>
-                                    <div class="b_name right">发发
+                                    <div class="b_name right">恩发
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-12 col-sm-12 col-xs-12 celebrate padding_0" style="margin-top:80px">
+                            <div class="col-sm-12 col-12 timer-counter" id="timer-counter">
+                              <div class="col-md-12 col-sm-12 col-xs-12 celebrate padding_0">
                                 <em><h3>2015年7月23日至今，我们已经一起走过</h3></em>
                             </div>
-                            <div class="col-sm-12 col-12 timer-counter">
-                              <div id="6251-countdown" class="tminus_countdown"><div class="container cloud-city-countdown omit weeks"><div id="6251-dashboard" class="cloud-city-dashboard"><div class="cloud-city-dash cloud-city-days_dash"><div class="cloud-city-dash_title">Days</div><div class="cloud-city-digit"><div class="top" style="display: none;"></div><div class="bottom" style="display: block;"></div></div><div class="cloud-city-digit"><div class="top" style="display: none;"></div><div class="bottom" style="display: block;"></div></div><div class="cloud-city-digit"><div class="top" style="display: none;"></div><div class="bottom" style="display: block;"></div></div></div><div class="cloud-city-dash cloud-city-hours_dash"><div class="cloud-city-dash_title">Hours</div><div class="cloud-city-digit"><div class="top" style="display: none;"></div><div class="bottom" style="display: block;"></div></div><div class="cloud-city-digit"><div class="top" style="display: none;"></div><div class="bottom" style="display: block;"></div></div></div><div class="cloud-city-dash cloud-city-minutes_dash"><div class="cloud-city-dash_title">Minutes</div><div class="cloud-city-digit"><div class="top" style="display: none;"></div><div class="bottom" style="display: block;"></div></div><div class="cloud-city-digit"><div class="top" style="display: none;"></div><div class="bottom" style="display: block;"></div></div></div><div class="cloud-city-dash cloud-city-seconds_dash"><div class="cloud-city-dash_title">Seconds</div><div class="cloud-city-digit"><div class="top" style="display: none;"></div><div class="bottom" style="display: block;"></div></div><div class="cloud-city-digit"><div class="top" style="overflow: hidden; height: 49.0106px; padding-top: 0px; margin-top: 0px; padding-bottom: 0px; margin-bottom: 0px;"></div><div class="bottom" style="display: block; overflow: hidden; height: 3.48939px;">1</div></div></div></div></div></div><script language="javascript" type="text/javascript">
+                              <div id="6251-countdown" class="tminus_countdown"><div class="container cloud-city-countdown omit weeks">
+                                  <div id="6251-dashboard" class="cloud-city-dashboard">
+                                      <div class="cloud-city-dash cloud-city-days_dash">
+                                          <div class="cloud-city-dash_title">Days</div>
+                                          <div class="cloud-city-digit">
+                                            <div class="top" style="display: none;"></div>
+                                            <div class="bottom" style="display: block;"></div>
+                                          </div>
+                                          <div class="cloud-city-digit">
+                                            <div class="top" style="display: none;"></div>
+                                            <div class="bottom" style="display: block;"></div>
+                                          </div>
+                                          <div class="cloud-city-digit">
+                                              <div class="top" style="display: none;"></div>
+                                              <div class="bottom" style="display: block;"> </div>
+                                              </div>
+                                          <div class="cloud-city-digit">
+                                              <div class="top" style="display: none;"></div><div class="bottom" style="display: block;"></div>
+                                         </div>
+                                      </div>
+                                              <div class="cloud-city-dash cloud-city-hours_dash"><div class="cloud-city-dash_title">Hours</div><div class="cloud-city-digit"><div class="top" style="display: none;"></div><div class="bottom" style="display: block;"></div></div><div class="cloud-city-digit"><div class="top" style="display: none;"></div><div class="bottom" style="display: block;"></div></div></div><div class="cloud-city-dash cloud-city-minutes_dash"><div class="cloud-city-dash_title">Minutes</div><div class="cloud-city-digit"><div class="top" style="display: none;"></div><div class="bottom" style="display: block;"></div></div><div class="cloud-city-digit"><div class="top" style="display: none;"></div><div class="bottom" style="display: block;"></div></div></div><div class="cloud-city-dash cloud-city-seconds_dash"><div class="cloud-city-dash_title">Seconds</div><div class="cloud-city-digit"><div class="top" style="display: none;"></div><div class="bottom" style="display: block;"></div></div><div class="cloud-city-digit"><div class="top" style="overflow: hidden; height: 49.0106px; padding-top: 0px; margin-top: 0px; padding-bottom: 0px; margin-bottom: 0px;"></div><div class="bottom" style="display: block; overflow: hidden; height: 3.48939px;">1</div></div></div></div></div></div><script language="javascript" type="text/javascript">
                       jQuery(document).ready(function($) {
                           $('#6251-dashboard').countDown({
                               targetDate: {
@@ -250,7 +274,8 @@
                               omitWeeks: 'true',
                               launchtarget: 'countup'});
                               });
-                      </script>                        </div>
+                      </script>                        
+                      </div>
                         </div>
                     </div>
                     <!--</div>-->
@@ -264,7 +289,7 @@
                               <span>Welcome</span>
                                 <span>欢迎</span>
                                 <color>见证</color>
-                                <span>我们的</span> <b>爱情</b>
+                                <span>我们的</span> <b>爱情</b>  <span>love story</span>
                             </h1>
                             <div class="seperator_border">
                                 <div class="separator" style = "background-image: url(images/separator.png)"></div>
@@ -273,11 +298,11 @@
                         <div class="couple animateblock btm">
                             <div class="col-sm-5 col-xs-12 padd-left groom-img">
                                 <div class="girl-img">
-                                    <img src="images/novia.png">
+                                    <img src="images/groom.jpg">
                                 </div>
                                 <div class="girl-name">
                                     <h3 class="welcome text-center">
-                                      <b>新郎</b>
+                                    <span>groom</span>
                                     </h3>
                                     <div class="text-capitalize text-center">陈恩发</div>
                                 </div>
@@ -289,11 +314,11 @@
                             </div>
                             <div class="col-sm-5 col-xs-12 padd-right groom-img">
                                 <div class="girl-img">
-                                    <img src="images/novio.png">
+                                    <img src="images/bride.jpg">
                                 </div>
                                 <div class="girl-name">
                                     <h3 class="welcome text-center">
-                                        <b>新娘</b>
+                                        <span>bride</span>
                                     </h3>
                                     <div class="text-capitalize text-center">姚燕芳</div>
                                 </div>
@@ -308,7 +333,7 @@
                 <div class="story-back col-xs-12">
                     <div class="container">
                         <div class="our-story-title animateblock btm">
-                            <h1 class="welcome text-center"><span>Fall in love</span> <b>相知相爱</b></h1>
+                            <h1 class="welcome text-center"><span>Fall in love</span> <b>一路走来</b></h1>
                             <div class="seperator_border">
                                 <div class="separator" style = "background-image: url(images/separator.png)"></div>
                             </div>
@@ -325,15 +350,15 @@
                                     <div class="ourstory-row">
                                         <div class="col-sm-6 pull-left post-thumb col-xs-6">
                                             <div class="thumb-img">
-                                                <img width="200" height="200" src="images/2007-200x200.jpg" class="attachment-200X200 size-200X200 wp-post-image" alt="" srcset="images/2007-200x200.jpg 200w" sizes="(max-width: 200px) 100vw, 200px" />
+                                                <img width="200" height="200" src="images/2015.jpg" class="attachment-200X200 size-200X200 wp-post-image" alt="" srcset="images/2015.jpg 200w" sizes="(max-width: 200px) 100vw, 200px" />
                                             </div>
                                         </div>
                                         <div class="col-sm-6 set-content-right pull-right col-xs-6">
-                                            <div class="year">2007</div>
+                                            <div class="year">2015</div>
                                             <div class="our-story-div">
-                                                <div class="our-story-name">Hello World! </div>
+                                                <div class="our-story-name">Establish the relationship! </div>
                                                 <div class="our-story-content">
-                                                    <p>print("Hello Love") Y así fue que nuestra historia comenzó a finales de este año :)</p>
+                                                    <p>2015年7月23日，那是我们的开始</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -347,17 +372,17 @@
                                     </div>
                                     <div class="ourstory-row">
                                         <div class="col-sm-6 set-content-left pull-left col-xs-6">
-                                            <div class="year">2008</div>
+                                            <div class="year">2016</div>
                                             <div class="our-story-div">
-                                                <div class="our-story-name"> Conociendo a la familia </div>
+                                                <div class="our-story-name">  We started dating  </div>
                                                 <div class="our-story-content">
-                                                    <p>Nuevas caras, grandes corazones. Conocimos a la familia de cada uno de los dos.</p>
+                                                    <p>之后，我们的感情越来越好</p>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-sm-6 pull-right post-thumb col-xs-6">
                                             <div class="thumb-img">
-                                                <img width="200" height="200" src="images/2008-200x200.jpg" class="attachment-200X200 size-200X200 wp-post-image" alt="" srcset="images/2008-200x200.jpg 200w" sizes="(max-width: 200px) 100vw, 200px" />
+                                                <img width="200" height="200" src="images/2016.jpg" class="attachment-200X200 size-200X200 wp-post-image" alt="" srcset="images/2016.jpg 200w" sizes="(max-width: 200px) 100vw, 200px" />
                                             </div>
                                         </div>
                                     </div>
@@ -371,16 +396,15 @@
                                     <div class="ourstory-row">
                                         <div class="col-sm-6 pull-left post-thumb col-xs-6">
                                             <div class="thumb-img">
-                                                <img width="200" height="200" src="images/2009-200x200.jpg" class="attachment-200X200 size-200X200 wp-post-image" alt="" srcset="images/2009-200x200.jpg 200w" sizes="(max-width: 200px) 100vw, 200px" />
+                                                <img width="200" height="200" src="images/2017.jpg" class="attachment-200X200 size-200X200 wp-post-image" alt="" srcset="images/2017.jpg 200w" sizes="(max-width: 200px) 100vw, 200px" />
                                             </div>
                                         </div>
                                         <div class="col-sm-6 set-content-right pull-right col-xs-6">
-                                            <div class="year">2009</div>
+                                            <div class="year">2017</div>
                                             <div class="our-story-div">
-                                                <div class="our-story-name">Izquierda y derecha </div>
+                                                <div class="our-story-name">The good old times.</div>
                                                 <div class="our-story-content">
-                                                    <p>Nos regalamos esas pulseras. Desde ese día nunca hemos dejado de usarlas. </p>
-                                                    <p>Izquierda y Derecha ^-^ </p>
+                                                    <p>一起旅游的日子也多了起来</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -389,22 +413,22 @@
                                 <div class="row animateblock btm">
                                     <div class="bubble bubble-right">
                                         <div class="bubble_img">
-                                            <img src="images/2010_icon.jpg">
+                                            <img src="images/2011_icon.jpg">
                                         </div>
                                     </div>
                                     <div class="ourstory-row">
                                         <div class="col-sm-6 set-content-left pull-left col-xs-6">
-                                            <div class="year">2010</div>
+                                            <div class="year">2018</div>
                                             <div class="our-story-div">
-                                                <div class="our-story-name"> Chapi  </div>
+                                                <div class="our-story-name"> We've finally graduated</div>
                                                 <div class="our-story-content">
-                                                    <p>Un viaje que realizamos siempre que podemos, siempre con nuevas anécdotas.</p>
+                                                    <p>终于，我们毕业啦，又一起走过一个新篇章</p>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-sm-6 pull-right post-thumb col-xs-6">
                                             <div class="thumb-img">
-                                                <img width="200" height="200" src="images/2010-200x200.jpg" class="attachment-200X200 size-200X200 wp-post-image" alt="" srcset="images/2010-200x200.jpg 200w" sizes="(max-width: 200px) 100vw, 200px" />
+                                                <img width="200" height="200" src="images/2018.jpg" class="attachment-200X200 size-200X200 wp-post-image" alt="" srcset="images/2018.jpg 200w" sizes="(max-width: 200px) 100vw, 200px" />
                                             </div>
                                         </div>
                                     </div>
@@ -412,27 +436,27 @@
                                 <div class="row animateblock btm">
                                     <div class="bubble bubble-left">
                                         <div class="bubble_img">
-                                            <img src="images/2011_icon.jpg">
+                                            <img src="images/2010_icon.jpg">
                                         </div>
                                     </div>
                                     <div class="ourstory-row">
                                         <div class="col-sm-6 pull-left post-thumb col-xs-6">
                                             <div class="thumb-img">
-                                                <img width="200" height="200" src="images/2011-200x200.jpg" class="attachment-200X200 size-200X200 wp-post-image" alt="" srcset="images/2011-200x200.jpg 200w" sizes="(max-width: 200px) 100vw, 200px" />
+                                                <img width="200" height="200" src="images/2019.jpg" class="attachment-200X200 size-200X200 wp-post-image" alt="" srcset="images/2019.jpg 200w" sizes="(max-width: 200px) 100vw, 200px" />
                                             </div>
                                         </div>
                                         <div class="col-sm-6 set-content-right pull-right col-xs-6">
-                                            <div class="year">2011</div>
+                                            <div class="year">2019-2022</div>
                                             <div class="our-story-div">
-                                                <div class="our-story-name">Gracias UNSA! </div>
+                                                <div class="our-story-name">Experienced long-distance love</div>
                                                 <div class="our-story-content">
-                                                    <p>Y después de 5 años de almorzar y cenar en el comedor universitario, finalmente terminamos la universidad! :D</p>
+                                                    <p>毕业之后，经历了长达4年的异地恋</p>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row animateblock btm">
+                                <!-- <div class="row animateblock btm">
                                     <div class="bubble bubble-right">
                                         <div class="bubble_img">
                                             <img src="images/2012_icon.jpg">
@@ -523,8 +547,8 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="row animateblock btm">
+                                </div> -->
+                                <!-- <div class="row animateblock btm">
                                     <div class="bubble bubble-right">
                                         <div class="bubble_img">
                                             <img src="images/2016_icon.jpg">
@@ -546,7 +570,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
                                 <div class="row animateblock btm">
                                     <div class="bubble bubble-left">
                                         <div class="bubble_img">
@@ -556,15 +580,15 @@
                                     <div class="ourstory-row">
                                         <div class="col-sm-6 pull-left post-thumb col-xs-6">
                                             <div class="thumb-img">
-                                                <img width="200" height="200" src="images/2017-200x200.jpg" class="attachment-200X200 size-200X200 wp-post-image" alt="" srcset="images/2017-200x200.jpg 200w" sizes="(max-width: 200px) 100vw, 200px" />
+                                                <img width="200" height="200" src="images/2022.jpg" class="attachment-200X200 size-200X200 wp-post-image" alt="" srcset="images/2022.jpg 200w" sizes="(max-width: 200px) 100vw, 200px" />
                                             </div>
                                         </div>
                                         <div class="col-sm-6 set-content-right pull-right col-xs-6">
-                                            <div class="year">2017</div>
+                                            <div class="year">2022</div>
                                             <div class="our-story-div">
-                                                <div class="our-story-name">Preparando todo! </div>
+                                                <div class="our-story-name">We tied the knot</div>
                                                 <div class="our-story-content">
-                                                    <p>Este 2017 es un año especial para nosotros. Este año nos casaremos y queremos compartirlo con nuestros familiares y amigos. Ya buscando el vestido y el terno</p>
+                                                    <p>今年，我们终于步入婚姻殿堂，即将在广州开启新生活</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -586,7 +610,7 @@
                 <div class="latest-blog-wrapper">
                     <div class="container">
                         <div class="welcome-title">
-                            <h1 class="welcome text-center"><span>Embrace each other</span> <b>相濡以沫</b></h1>
+                            <h1 class="welcome text-center"><span>Get Married</span> <b>终于结婚啦</b></h1>
                             <div class="seperator_border">
                                 <div class="separator" style = "background-image: url(images/separator.png)"></div>
                             </div>
@@ -649,10 +673,122 @@
                                 </a>
                             </div>
                         </div>
+                        <div class="col-xs-6 col-sm-3 col-md-3 animateblock btm padding_0 ourgallery-block text-center">
+                            <div class="col-xs-12 padding_0">
+                                <a href="images/gal-9.jpg" class="fancybox" rel="gallery">
+                                <img width="1024" height="682" src="images/gal-9.jpg" class="attachment-gallery-img size-gallery-img wp-post-image" alt="" />
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-sm-3 col-md-3 animateblock btm padding_0 ourgallery-block text-center">
+                            <div class="col-xs-12 padding_0">
+                                <a href="images/gal-10.jpg" class="fancybox" rel="gallery">
+                                <img width="1024" height="682" src="images/gal-10.jpg" class="attachment-gallery-img size-gallery-img wp-post-image" alt="" />
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-sm-3 col-md-3 animateblock btm padding_0 ourgallery-block text-center">
+                            <div class="col-xs-12 padding_0">
+                                <a href="images/gal-11.jpg" class="fancybox" rel="gallery">
+                                <img width="1024" height="682" src="images/gal-11.jpg" class="attachment-gallery-img size-gallery-img wp-post-image" alt="" />
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-sm-3 col-md-3 animateblock btm padding_0 ourgallery-block text-center">
+                            <div class="col-xs-12 padding_0">
+                                <a href="images/gal-12.jpg" class="fancybox" rel="gallery">
+                                <img width="1024" height="682" src="images/gal-12.jpg" class="attachment-gallery-img size-gallery-img wp-post-image" alt="" />
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-sm-3 col-md-3 animateblock btm padding_0 ourgallery-block text-center">
+                            <div class="col-xs-12 padding_0">
+                                <a href="images/gal-13.jpg" class="fancybox" rel="gallery">
+                                <img width="1024" height="682" src="images/gal-13.jpg" class="attachment-gallery-img size-gallery-img wp-post-image" alt="" />
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-sm-3 col-md-3 animateblock btm padding_0 ourgallery-block text-center">
+                            <div class="col-xs-12 padding_0">
+                                <a href="images/gal-14.jpg" class="fancybox" rel="gallery">
+                                <img width="1024" height="682" src="images/gal-14.jpg" class="attachment-gallery-img size-gallery-img wp-post-image" alt="" />
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-sm-3 col-md-3 animateblock btm padding_0 ourgallery-block text-center">
+                            <div class="col-xs-12 padding_0">
+                                <a href="images/gal-15.jpg" class="fancybox" rel="gallery">
+                                <img width="1024" height="682" src="images/gal-15.jpg" class="attachment-gallery-img size-gallery-img wp-post-image" alt="" />
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-sm-3 col-md-3 animateblock btm padding_0 ourgallery-block text-center">
+                            <div class="col-xs-12 padding_0">
+                                <a href="images/gal-16.jpg" class="fancybox" rel="gallery">
+                                <img width="1024" height="682" src="images/gal-16.jpg" class="attachment-gallery-img size-gallery-img wp-post-image" alt="" />
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-sm-3 col-md-3 animateblock btm padding_0 ourgallery-block text-center">
+                            <div class="col-xs-12 padding_0">
+                                <a href="images/gal-17.jpg" class="fancybox" rel="gallery">
+                                <img width="1024" height="682" src="images/gal-17.jpg" class="attachment-gallery-img size-gallery-img wp-post-image" alt="" />
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-sm-3 col-md-3 animateblock btm padding_0 ourgallery-block text-center">
+                            <div class="col-xs-12 padding_0">
+                                <a href="images/gal-18.jpg" class="fancybox" rel="gallery">
+                                <img width="1024" height="682" src="images/gal-18.jpg" class="attachment-gallery-img size-gallery-img wp-post-image" alt="" />
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-sm-3 col-md-3 animateblock btm padding_0 ourgallery-block text-center">
+                            <div class="col-xs-12 padding_0">
+                                <a href="images/gal-19.jpg" class="fancybox" rel="gallery">
+                                <img width="1024" height="682" src="images/gal-19.jpg" class="attachment-gallery-img size-gallery-img wp-post-image" alt="" />
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-sm-3 col-md-3 animateblock btm padding_0 ourgallery-block text-center">
+                            <div class="col-xs-12 padding_0">
+                                <a href="images/gal-20.jpg" class="fancybox" rel="gallery">
+                                <img width="1024" height="682" src="images/gal-20.jpg" class="attachment-gallery-img size-gallery-img wp-post-image" alt="" />
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-sm-3 col-md-3 animateblock btm padding_0 ourgallery-block text-center">
+                            <div class="col-xs-12 padding_0">
+                                <a href="images/gal-21.jpg" class="fancybox" rel="gallery">
+                                <img width="1024" height="682" src="images/gal-21.jpg" class="attachment-gallery-img size-gallery-img wp-post-image" alt="" />
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-sm-3 col-md-3 animateblock btm padding_0 ourgallery-block text-center">
+                            <div class="col-xs-12 padding_0">
+                                <a href="images/gal-22.jpg" class="fancybox" rel="gallery">
+                                <img width="1024" height="682" src="images/gal-22.jpg" class="attachment-gallery-img size-gallery-img wp-post-image" alt="" />
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-sm-3 col-md-3 animateblock btm padding_0 ourgallery-block text-center">
+                            <div class="col-xs-12 padding_0">
+                                <a href="images/gal-23.jpg" class="fancybox" rel="gallery">
+                                <img width="1024" height="682" src="images/gal-23.jpg" class="attachment-gallery-img size-gallery-img wp-post-image" alt="" />
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-sm-3 col-md-3 animateblock btm padding_0 ourgallery-block text-center">
+                            <div class="col-xs-12 padding_0">
+                                <a href="images/gal-24.jpg" class="fancybox" rel="gallery">
+                                <img width="1024" height="682" src="images/gal-24.jpg" class="attachment-gallery-img size-gallery-img wp-post-image" alt="" />
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
-            <section id="event" class="slide the-wedding" data-stellar-background-ratio="0.5">
+            <!-- <section id="event" class="slide the-wedding" data-stellar-background-ratio="0.5">
                 <div class="we col-xs-12">
                     <div class="container">
                         <div class="welcome-title animateblock btm">
@@ -701,7 +837,7 @@
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> -->
             <section id="place" class="slide party" data-stellar-background-ratio="0.5">
                 <div class="party-back  col-xs-12">
                     <div class="container">
@@ -712,7 +848,7 @@
                             </div>
                         </div>
                         <div class="party col-xs-12 col-sm-6 animateblock btm">
-                            <p class="party-content text-justify">各位亲戚朋友们, 两位新人的婚礼将将于<b>2022年8月5日下午18点整</b>在 <b>棉湖XX饭店</b>举行(xx路xx号，见地图)。我们将恭候您光临。请记住，唯一可以迟到的人只有新娘~</p>
+                            <p class="party-content text-justify">各位亲戚朋友们, 两位新人的婚礼将将于<b>2022年8月5日下午18点整</b>在 <b>棉湖迎宾馆</b>举行(xx路xx号，见地图)。我们将恭候您光临。请记住，唯一可以迟到的人只有新娘~</p>
                         </div>
                         <div class="col-sm-6 col-xs-12 animateblock btm">
                             <div class="map">
@@ -723,9 +859,21 @@
                                           map.enableScrollWheelZoom();   //启用滚轮放大缩小，默认禁用
                                           map.enableContinuousZoom();    //启用地图惯性拖拽，默认禁用    
                                           // map.centerAndZoom("揭阳",19);   // 初始化地图,设置城市和地图级别。
-                                          var point = new BMap.Point(116.15013,23.435794);    
-                                          map.centerAndZoom(point, 20);   
-                                          var marker = new BMap.Marker(point);        // 创建标注    
+                                          var point = new BMap.Point(116.15015,23.435790);    
+                                          map.centerAndZoom(point, 20);  
+                                          var myIcon = new BMap.Icon("./images/heartpin.png", new BMap.Size(30, 30), {    
+                                              // 指定定位位置。   
+                                              // 当标注显示在地图上时，其所指向的地理位置距离图标左上    
+                                              // 角各偏移10像素和25像素。您可以看到在本例中该位置即是   
+                                              // 图标中央下端的尖角位置。    
+                                              anchor: new BMap.Size(20, 35),    
+                                              // 设置图片偏移。   
+                                              // 当您需要从一幅较大的图片中截取某部分作为标注图标时，您   
+                                              // 需要指定大图的偏移位置，此做法与css sprites技术类似。    
+                                              // imageOffset: new BMap.Size(0, 0 - index * 25) 
+                                                // 设置图片偏移    
+                                          });   
+                                          var marker = new BMap.Marker(point,{icon: myIcon});        // 创建标注    
                                           map.addOverlay(marker);  
                                           // window.setTimeout(function(){  
                                           //     map.panTo(new BMap.Point(116.409, 39.918));    
@@ -742,25 +890,25 @@
                 <div class="we col-xs-12">
                     <div class="container">
                         <div class="welcome-title animateblock btm">
-                            <h1 class="welcome text-center"><span>Los </span> <b>Regalos</b></h1>
+                            <h1 class="welcome text-center"><span>Best Wish</span> <b>祝福</b></h1>
                             <div class="seperator_border">
                                 <div class="separator" style = "background-image: url(images/separator.png)"></div>
                             </div>
                         </div>
                         <div class="row animateblock btm">
-                            <div class="col-xs-12">
-                                <p align="justify">Debido a nuestros planes de vivir en el extranjero por un largo periodo, es muy difícil llevar los regalos con nosotros. Dado eso, decidimos utilizar otro mecanismo muy fácil para los invitados y para nosotros. En vez de comprar un regalo, los invitados pueden depositar su equivalente en dinero en la cuenta del BBVA Continental indicada en la tarjeta de invitación. Muchas gracias!!!</p>
+                            <div class="col-xs-12" style="margin-top: 10px;font-size:20px">
+                                <p align="center">最后，就让我们给这对新人送上最最最最最最最最最最最最诚挚的祝福!!!💗祝 恩发 & 燕芳 <b>百年好合，早生贵子</b>💗</p>
                             </div>
                             </br>
                             <div class="flexslider-wedding">
-                                <div class="testimonial-img color-border"><img width="128" height="128" src="images/gift.png" class="attachment-wedding_program_img size-wedding_program_img wp-post-image" alt="" srcset="images/gift.png 128w, images/gift-110x110.png 110w, images/gift-120x120.png 120w, images/gift-50x50.png 50w" sizes="(max-width: 128px) 100vw, 128px" />
+                                <div class="testimonial-img color-border"><img width="128" height="128" src="images/cocktail.png" class="attachment-wedding_program_img size-wedding_program_img wp-post-image" alt="" srcset="images/cocktail.png 128w, images/cocktail-110x110.png 110w, images/cocktail-120x120.png 120w, images/cocktail-50x50.png 50w" sizes="(max-width: 128px) 100vw, 128px" />
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
-            <div class="slide story-back" id="slide6">
+            <!-- <div class="slide story-back" id="slide6">
                 <div class="container">
                     <div class="col-xs-12 text-center padd">
                         <div class="footer-msg">
@@ -773,13 +921,13 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <div class="slide">
                 <div class="footer-writeby text-capitalize text-center col-xs-12">
                     <div class="container">
                         <div class="row">
                             <div class="col-xs-12 col-sm-12 col-md-12">
-                                <p>💗祝 发发 &amp; 芳芳 百年好合，早生贵子💗</p>
+                                <p>💗祝 恩发 &amp; 燕芳 百年好合，早生贵子💗</p>
                             </div>
                         </div>
                     </div>
@@ -794,38 +942,6 @@
         <script type='text/javascript' src='js/jquery/ui/sortable.min.js'></script>
         <script type='text/javascript' src='js/jquery/ui/effect.min.js'></script>
         <script type='text/javascript' src='js/wp-embed.min.js'></script>
-        <!-- <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
-        <script type='text/javascript'>
-          // var currentpos=window.screen.height,timer;
-          var currentpos=0,timer;
-          function initialize()
-          {
-            // timer=setInterval("scrollwindow()",6000);
-            timer=setInterval("scrollwindow()",20);
-          }
-          function sc()
-          {
-            clearInterval(timer);
-            console.log("stop");
-          }
-          function scrollwindow()
-          {  
-            //  currentpos+=window.screen.height;
-             currentpos++;
-              console.log("currentpos"+currentpos);  
-             window.scroll(0,currentpos);   
-             if(currentpos >= document.body.scrollHeight)
-            {
-               sc();    
-            }  
-          }
-          document.onmousedown=sc; //停止
-          document.ondblclick=initialize; //开始
-          // setTimeout(()=>{
-          //   initialize()
-          // },1500)
-          
-
-        </script>
+        <script type='text/javascript' src="js/main.js"></script>
     </body>
 </html>
