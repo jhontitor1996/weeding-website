@@ -176,19 +176,22 @@
                         <div class="back-img">
                             <div style="display: none;" class="avartanslider-slider avartanslider-slider-full-width avartanslider-slider-home_slider" id="avartanslider-1">
                                 <ul>
-                                    <li style=" background-color: transparent; background-image: url('./images/banner.jpg');; background-position: center 2%; background-repeat: no-repeat; background-size: cover;" data-in="slideRight" data-ease-in="300" data-out="slideLeft" data-ease-out="300" data-time="3000"></li>
+                                    <li style=" background-color: transparent; background-image: url('./images/banner.jpg');; background-position: center 8%; background-repeat: no-repeat; background-size: cover;" data-in="slideRight" data-ease-in="300" data-out="slideLeft" data-ease-out="300" data-time="3000"></li>
                                 </ul>
                             </div>
                             <script type="text/javascript">
                                 (function($) {
                                 $(document).ready(
-                                  function() {
-                                  // alert($(window).height())
-                                $('#timer-counter').css('top',$(window).height()*0.1);
+                                function() {
+                                if(/Mobi|Android|iPhone/i.test(navigator.userAgent)){
+                                  $('#timer-counter').css('top',$(window).height()*0.05);
+                                }else{
+                                  $('#timer-counter').css('top',$(window).height()*0.07);
+                                };
                                 $("#avartanslider-1").avartanSlider({
                                 layout: 'full-width',
                                 startWidth: 1170,
-                                startHeight: $(window).height()*0.75,
+                                startHeight: $(window).height()*0.7,
                                 sliderBgColor: 'transparent',
                                 automaticSlide: 1,
                                 enableSwipe: 1,
@@ -848,7 +851,7 @@
                             </div>
                         </div>
                         <div class="party col-xs-12 col-sm-6 animateblock btm">
-                            <p class="party-content text-justify">各位亲戚朋友们, 两位新人的婚礼将将于<b>2022年8月5日下午18点整</b>在 <b>棉湖迎宾馆</b>举行(xx路xx号，见地图)。我们将恭候您光临。请记住，唯一可以迟到的人只有新娘~</p>
+                            <p class="party-content text-justify">各位亲戚朋友们, 两位新人的婚礼将将于<b>2022年8月5日中午12点整</b>在 <b>棉湖迎宾馆</b>举行(棉湖镇湖坡路，见地图)。我们将恭候您光临。</p>
                         </div>
                         <div class="col-sm-6 col-xs-12 animateblock btm">
                             <div class="map">
