@@ -184,14 +184,14 @@
                                 $(document).ready(
                                 function() {
                                 if(/Mobi|Android|iPhone/i.test(navigator.userAgent)){
-                                  $('#timer-counter').css('top',$(window).height()*0.05);
+                                  $('#timer-counter').css('top',window.screen.height*0.05);
                                 }else{
-                                  $('#timer-counter').css('top',$(window).height()*0.07);
+                                  $('#timer-counter').css('top',window.screen.height*0.07);
                                 };
                                 $("#avartanslider-1").avartanSlider({
                                 layout: 'full-width',
                                 startWidth: 1170,
-                                startHeight: $(window).height()*0.75,
+                                startHeight: window.screen.height*0.65,
                                 sliderBgColor: 'transparent',
                                 automaticSlide: 1,
                                 enableSwipe: 1,
